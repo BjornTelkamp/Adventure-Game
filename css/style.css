@@ -1,0 +1,152 @@
+* {
+	margin: 0;
+	font-family: 'Permanent Marker', cursive;
+}
+#container {
+	margin: 0 auto;
+	width: 100vw;
+	height:100vh;
+	background-image: url(../images/maingbg.gif);
+	background-size: cover;
+}
+#button1{
+	position: absolute;
+	top: 55%;
+	left: 10%;
+	width: 150px;
+	height: 30px;
+	cursor: pointer;
+	text-align: center;
+	background: none;
+	color: aqua;
+	border: 2px solid aqua;
+	font-size: 20px;
+	padding-bottom: 30px;
+	box-shadow: 3px 3px;
+	text-shadow: 2px 2px black;
+}
+#button1 span {
+	display: none;
+}
+
+#button2 {
+	position: absolute;
+	top: 65%;
+	left: 10%;
+	width: 150px;
+	height: 30px;
+	cursor: pointer;
+	text-align: center;
+	background: none;
+	color: aqua;
+	border: 2px solid aqua;
+	font-size: 20px;
+	padding-bottom: 30px;
+	box-shadow: 3px 3px;
+	text-shadow: 2px 2px black;
+}
+
+#button3 {
+	position: absolute;
+	top: 75%;
+	left: 10%;
+	width: 150px;
+	height: 30px;
+	cursor: pointer;
+	text-align: center;
+	background: none;
+	color: aqua;
+	border: 2px solid aqua;
+	font-size: 20px;
+	padding-bottom: 30px;
+	box-shadow: 3px 3px;
+	text-shadow: 2px 2px black;
+}
+#image {
+	position: relative;
+	left: 81.5%;
+	top: 30%;
+ 	width: 25px; 
+ 	height: 25px;
+ 	opacity: .35;
+ 	cursor: pointer;
+}
+
+#title {
+	position: absolute;
+	color: aqua;
+	font-size: 100px;
+	right: 10%;
+	top: 5%;
+	text-shadow: 5px 5px black;
+}
+
+#description {
+	position: absolute;
+	left: 10%;
+	top: 30%;
+	width: 450px;
+	padding: 10px;
+  	border-radius: 5px;
+  	text-shadow: 1px 1px black;
+  	color: white;
+  	font-size: 20px;
+  	
+}
+
+#container.level1 {
+	background-image: url('../images/level1.jpg');
+}
+
+#description.level1Text {
+	left: 20%;
+	top: 10%;
+	width: 800px;
+}
+
+#container.stuck {
+	background-image: url('../images/level2Left.jpg');	
+}
+
+#container.level2Right {
+	background-image:url('../images/level2Right.jpg');
+	}
+
+.map {
+
+}
+
+#image.imageMap {
+	width: 250px;
+	height: 250px;
+	opacity: 1;
+	left: 40%
+}
+
+#description.descriptionMap{
+	position: relative;
+	top: 0%;
+	left: 32%;
+	text-align: center;
+}
+
+#container.finish {
+	background-image: url('../images/finish.png');
+}
+
+#container.level3Right{
+	background-image: url('../images/level3Right.jpg');
+}
+
+#container.insideHouse {
+	background-image: url('../images/insideHouse.jpg');
+}
+
+#container.youDied{
+	background-image: url('../images/youdied.jpg');
+}
+
+#description.finish{
+		font-size: 50px;
+
+}
