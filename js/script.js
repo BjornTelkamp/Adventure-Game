@@ -1,3 +1,4 @@
+// --- Variables --- //
 var button1 = document.getElementById('button1');
 var button3 = document.getElementById('button3');
 var container = document.getElementById('container');
@@ -10,12 +11,14 @@ var i = 0;
 var afbeelding1 = 'map';
 var flashlight = 0;
 
+// --- Buttons ---//
 button1.onclick = startGame;
 button2.onclick = quit;	
 button3.onclick = quest;
 map.onclick = skip;
 description.style.display = "none"
 
+//------Main Menu------//
 function mainMenu(){
 	location.reload();
 	container.classList.remove("finish");
@@ -29,7 +32,6 @@ function mainMenu(){
 	description.style.display = "none";
 	button1.AddEventListener("click", startGame, false);
 	button1.onclick = "startGame";
-
 }
 
 function startGame(){
@@ -82,6 +84,48 @@ function quest(){
 	description.innerText = "Your objective is to escape the Forest. \n Find your way through and escape! \n \n Items you can find:";
 }
 
+function skip() {
+		map.classList.add('imageMap')
+		mappoint = mappoint + 1;
+		console.log(mappoint);
+		title.style.display = "none";
+		button1.style.display = "none";
+		button2.style.display = "none";
+		button3.innerText = "Continue";
+		button3.style.left = "43%";
+		map.style.top = "50%";
+		description.style.display = "block";
+		description.innerText = "You have found a map with the way out of the Forest. Hit 'Continue' to procceed towards the exit. ";
+		description.classList.add("descriptionMap");
+		button3.onclick = finishEE;
+}
+
+function finishEE() {
+	container.classList.add('finish');	
+	description.classList.add('finish')
+	map.style.display = "none";
+	description.innerText = "YOU ESCAPED!";
+	description.fontSize = "100px";
+	button3.onclick = mainMenu;
+	description.style.left = "32%";
+}
+
+function imageSwap() {
+	console.log(document.getElementById('image').src);
+	if(afbeelding1 == 'map'){
+		document.getElementById("image").src = 'images/flashlight.png';
+		afbeelding1 = 'flashlight';
+	}else if (afbeelding1 == 'flashlight'){
+		document.getElementById('image').src = 'images/key.png';
+		afbeelding1 = 'key';
+	}else if (afbeelding1 == 'key'){
+		document.getElementById('image').src = 'images/map.png';
+		afbeelding1 = 'map';
+
+	}
+}
+
+// --- First level --- //
 function level2Right(){
 	container.classList.add('level2Right');
 	container.classList.remove('level3Right', 'level1');
@@ -142,33 +186,7 @@ function startBack(){
 	}
 }
 
-	function skip() {
-		map.classList.add('imageMap')
-		mappoint = mappoint + 1;
-		console.log(mappoint);
-		title.style.display = "none";
-		button1.style.display = "none";
-		button2.style.display = "none";
-		button3.innerText = "Continue";
-		button3.style.left = "43%";
-		map.style.top = "50%";
-		description.style.display = "block";
-		description.innerText = "You have found a map with the way out of the Forest. Hit 'Continue' to procceed towards the exit. ";
-		description.classList.add("descriptionMap");
-		button3.onclick = finishEE;
-
-	}
-
-function finishEE() {
-	container.classList.add('finish');	
-	description.classList.add('finish')
-	map.style.display = "none";
-	description.innerText = "YOU ESCAPED!";
-	description.fontSize = "100px";
-	button3.onclick = mainMenu;
-	description.style.left = "32%";
-}
-
+// --- Second Level --- //
 function level3Right() {
 	container.classList.remove('level1','level2Right','insideHouse');
 	container.classList.add('level3Right');
@@ -188,26 +206,9 @@ function level3Right() {
 	}else if(flashlight >= 1){
 		button1.style.display = "none";
 	}
+	map.style.display = "none";
 
 }
-
-
-
-function imageSwap() {
-	console.log(document.getElementById('image').src);
-	if(afbeelding1 == 'map'){
-		document.getElementById("image").src = 'images/flashlight.png';
-		afbeelding1 = 'flashlight';
-	}else if (afbeelding1 == 'flashlight'){
-		document.getElementById('image').src = 'images/key.png';
-		afbeelding1 = 'key';
-	}else if (afbeelding1 == 'key'){
-		document.getElementById('image').src = 'images/map.png';
-		afbeelding1 = 'map';
-
-	}
-}
-
 function keyCheck(){
 	if (key >= 1){
 		insideHouse();
